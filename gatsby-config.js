@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `ydx Blog`,
     author: {
       name: `Kyle Mathews`,
       summary: `who lives and works in San Francisco building useful things.`,
@@ -19,6 +19,24 @@ module.exports = {
         name: `blog`,
       },
     },
+    // gatsby-config.js
+{
+  resolve: `gatsby-source-notion-database`,
+  options: {
+    sourceConfig: [
+      {
+        name: 'posts',
+        table: 'https://www.notion.so/4b50defc60ce4e89a6539f511d9d946f?v=8e71dde4479040b5a3e6ca0d91d3d8e6',
+        cacheType: 'html'
+      },
+      {
+        name: 'books',
+        table: 'https://www.notion.so/4ae9328e650945eb9adbd882b3b453d3?v=0966bdbd0645437cbcc62e6a933e241c',
+        cacheType: 'static'
+      }
+    ]
+  }
+},
     {
       resolve: `gatsby-source-filesystem`,
       options: {
